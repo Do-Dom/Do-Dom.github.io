@@ -12,7 +12,6 @@ init();
 
 function init()
 {
-    greetingComment.classList.add(FAINT);
     greeting();
 }
 
