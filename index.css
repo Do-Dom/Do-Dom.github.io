@@ -1,0 +1,32 @@
+.css-hide
+{
+    display : none;
+}
+
+@keyframes FadeIn
+{
+    from
+    {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
+}
+
+.bg
+{
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: auto;
+    height: auto;
+    z-index: -1;
+
+    animation: FadeIn 0.5s linear
+}
