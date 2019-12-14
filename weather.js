@@ -2,10 +2,19 @@ const weatherContainer = document.querySelector(".js-weather");
 const weatherContent = weatherContainer.querySelector(".js-content");
 const LOCATION_LS = "location";
 
+const APIKEY = "06810087a186c8d85b29026e5b978911";
+const API = "api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}"
+
 function showLocation(lat, lng)
 {
-    const loc = `lat : ${lat}, lng : ${lng}`;
-    weatherContent.innerHTML = loc;
+    fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${APIKEY}&units=metric`
+    ).then((response) => {
+        return response.json();
+    }).then((json)=>{
+        weatherContent.innerHTML = `${json.main.temp} @${json.name}`;
+    });
+
 }
 
 function saveLocation(location)
